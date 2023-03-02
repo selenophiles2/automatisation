@@ -33,6 +33,10 @@ jobs:
   run-script:
     runs-on : ubuntu-latest
     
+    env:
+      JOB_NAME: "RUN SCRIPT"
+      
+    
     steps:
   
       - name: clone repository
@@ -42,6 +46,10 @@ jobs:
         run : |
           echo "App name: ${{ env.APP_NAME }}
           echo "App package: ${{ env.APP_PACKAGE }}
+          echo "Job Name: ${{ env.JOB_NAME }}
+          echo "Step Name: $STEP_NAME
+        env: 
+          STEP_NAME: "STEP Naming"
     
       - name: Instal Python 3.10
         uses: actions/setup-python@v3

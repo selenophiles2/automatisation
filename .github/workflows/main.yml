@@ -26,12 +26,17 @@ jobs:
     steps:
       - name: Bye step
         run : echo "Bye bye"!
-    
-    
-    
-    
-   
   
+  run-script:
+    runs-on : ubuntu-latest
+    needs: [hello]
     
-
-  
+    steps:
+      - name: Instal Python 3.10
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.10"
+      
+      - name: Run my script
+        run : python3 myNumbers.py
+    

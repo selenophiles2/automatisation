@@ -15,6 +15,9 @@ jobs:
       
     - name: List directories
       run : ls -la
+      
+    - name: clone repository
+      uses: actions/checkout@v3
   
   bye:
     runs-on: ubuntu-latest

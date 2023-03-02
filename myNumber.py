@@ -1,5 +1,5 @@
 from datetime import datetime
-import rendom
+import random
 
 
 print(f"Hello from {datetime.now().year}!")

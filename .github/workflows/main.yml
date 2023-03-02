@@ -1,5 +1,9 @@
 name: myAutomatisation
 
+env:
+  APP_NAME: "My Application"
+  APP_PACKAGE: "my_app_${{ github.sha }}"
+
 on: 
   push:
     branches: [ "main"]
@@ -30,8 +34,14 @@ jobs:
     runs-on : ubuntu-latest
     
     steps:
+  
       - name: clone repository
         uses: actions/checkout@v3
+        
+      - name: Name of my script
+        run : |
+          echo "App name: ${{ env.APP_NAME }}
+          echo "App package: ${{ env.APP_PACKAGE }}
     
       - name: Instal Python 3.10
         uses: actions/setup-python@v3

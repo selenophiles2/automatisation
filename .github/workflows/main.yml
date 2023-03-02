@@ -13,6 +13,8 @@ jobs:
     - name: Hello step
       run : echo "Hello from github actions!"
       
+      -name: List directories
+       run : ls -la
   
   bye:
     runs-on: ubuntu-latest
